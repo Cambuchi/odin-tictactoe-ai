@@ -96,7 +96,7 @@ class TicTacToe {
     function render() {
         let tiles = Array.from(document.getElementsByTagName('td'));
         game.board.forEach((cell, i) => table.rows[Math.floor(i / 3)].cells[i % 3].className = "NXO"[cell]);
-        messageArea.textContent = game.isWin ? (game.turn == human ? "O has won! Press NEW GAME to play again." : "X has won! Press NEW GAME to play again.")
+        messageArea.textContent = game.isWin ? (human == 1 ? "O has won! Press NEW GAME to play again." : "X has won! Press NEW GAME to play again.")
                                 : game.isDraw ? "Draw! No one wins. Press NEW GAME to play again."
                                 : game.turn == human ? "Your turn" 
                                 : "AI is preparing move...";
@@ -115,7 +115,9 @@ class TicTacToe {
     //goes through minmax algorithm to decide on a good index to played
     //added delay so that timing for cpu reply is consistent
     function aiMove() {
-        if (game.isWin || game.isDraw) return; 
+        if (game.isWin || game.isDraw) {
+            return;
+        }; 
         human = 3 - game.turn;
         render();
         setTimeout(() => {
@@ -139,7 +141,7 @@ class TicTacToe {
     function newGame() {
         game = new TicTacToe();
         human = 1;
-        render();
+        render(); 
     }
 
     table.addEventListener("click", e => humanMove(e.target.cellIndex + 3 * e.target.parentNode.rowIndex));

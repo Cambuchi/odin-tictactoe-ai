@@ -39,14 +39,14 @@ body {
 @media only screen and (max-width: 768px){
     #game-container {
         width: 75%;
-        font-size: 8vw;
+        font-size: 7vw;
     }
 }
 
 @media only screen and (max-width: 1200px){
     #game-container {
         width: 66%;
-        font-size: 7vw;
+        font-size: 6vw;
     }
 }
 
