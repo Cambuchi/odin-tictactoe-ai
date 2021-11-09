@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Oswald:wght@300;400&display=swap');
+* {-webkit-font-smoothing: antialiased;}
+
+html {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, rgb(142, 213, 255), rgb(239, 244, 255));
+}
+
+#header, #header h1 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 8rem;
+    font-weight: 700;
+    margin: 0px;
+}
+
+#game-container {
+    position: relative;
+    display: flex;
+    margin: 20px 50px 50px 50px;
+    width: 25%;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+    background: rgb(50, 50, 50);
+    border-radius: 10px;
+    font-size: 6vw;
+}
+
+@media only screen and (max-width: 768px){
+    #game-container {
+        width: 75%;
+        font-size: 8vw;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    #game-container {
+        width: 66%;
+        font-size: 7vw;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#button-container {
+    display: flex;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+.btn {
+    border: 3px solid rgb(20, 20, 20);
+    border-radius: 10px;
+    padding: 5px 40px;
+    margin: 0px 15px;
+    height: 100%;
+    min-height: 80px;
+    min-width: 200px;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+
+.btn:hover {
+    background-color: rgb(165, 165, 165);
+}
+
+.btn:active {
+    background-color: rgb(128, 128, 128);
+}
+
+#message {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+
+
+#game { 
+    border-collapse: separate; 
+    width: 100%;
+    height: 100%;
+}
+ table {
+    border-spacing: 10px;
+    border-collapse: separate;
+    width: 100%;
+    height: 100%;
+ }
+#game td { 
+    width: calc(90%/3);
+    height: calc(90%/3);
+    text-align: center; 
+    cursor: pointer;
+    background: rgb(210, 210, 210);
+    border-radius: 10px;
+}
+
+#game td.X, #game td.O { 
+    cursor: default;
+}
+#game td.X { 
+    color: #df445b;
+    background: #F4C2C1;
+}
+#game td.O { 
+    color: #3563b9;
+    background: #89d0f2;
+}
+#game td.X:after { 
+    content: "X" 
+}
+#game td.O:after { 
+    content: "O" 
+}
+
+#game td.I {
+    background: rgb(210, 210, 210);
+    cursor: default;
+}
+
+#game td.N:hover {
+    background-color: rgb(165, 165, 165);
+}
+#game td.N:active {
+    background-color: rgb(128, 128, 128);
+}
+
